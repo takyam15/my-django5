@@ -1,0 +1,9 @@
+django >=5.0
+django-cleanup
+django-environ
+factory-boy
+gunicorn
+pillow
+psycopg
+pytest
+pytest-django
