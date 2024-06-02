@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {% block css %}{% endblock css %}
+
+        <title>{% block title %}{% endblock title %}</title>
+
+    </head>
+
+
+
+    <body>
+
+
+        {% include 'snippets/header.html' %}
+
+
+        <main class="container">
+
+            {% block main %}{% endblock main %}
+        
+        </main>
+
+
+        {% include 'snippets/footer.html' %}
+
+
+        {% block js %}{% endblock js %}
+
+        
+    </body>
+
+
+
+</html>
