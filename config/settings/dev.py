@@ -4,3 +4,8 @@ from .base import *  # noqa
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+
+try:
+    from .local_settings import *  # noqa
+except ImportError:
+    pass

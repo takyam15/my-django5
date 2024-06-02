@@ -6,3 +6,8 @@ DEBUG = False
 ALLOWED_HOSTS = [
         env('IP_ADDRESS'), 'example.com', 'www.example.com', 'localhost'
     ]
+
+try:
+    from .local_settings import *  # noqa
+except ImportError:
+    pass
