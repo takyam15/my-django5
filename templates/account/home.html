@@ -6,6 +6,6 @@
 {% block main %}
 
 <h2 class="text-center my-5">{{ request.user }}さんのマイページ</h2>
-<div class="text-center"><a href="{% url 'account:logout' %}">ログアウト</a></div>
+<div class="text-center"><form action="" method="POST"><a href="{% url 'account:logout' %}">ログアウト</a></form></div>
 
 {% endblock main %}
