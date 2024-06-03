@@ -6,6 +6,11 @@
 {% block main %}
 
 <h2 class="text-center my-5">{{ request.user }}さんのマイページ</h2>
-<div class="text-center"><form action="" method="POST"><a href="{% url 'account:logout' %}">ログアウト</a></form></div>
+<div class="text-center">
+    <form method="POST" action="{% url 'account:logout' %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-outline-dark my-3">logout</button>
+    </form>
+</div>
 
 {% endblock main %}

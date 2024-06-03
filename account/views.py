@@ -23,7 +23,7 @@ class UserHomeView(LoginRequiredMixin, TemplateView):
 
 class UserLogoutView(LogoutView):
 
-    template_name = 'account/login.html'
+    pass
 
 
 class ContactFormView(FormView):
