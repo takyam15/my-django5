@@ -47,9 +47,9 @@ class TestUserHomeView:
         assert response.url == f'{url_login}?next={url_home}'
 
 
-class TestUserLogoutView:
+"""class TestUserLogoutView:
 
-    """def test_get(self, user):
+    def test_get(self, user):
         rf = RequestFactory()
         request = rf.get(reverse('account:logout'))
         request.user = user
