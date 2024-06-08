@@ -22,7 +22,7 @@ jobs:
       DATABASE_ENGINE: django.db.backends.postgresql
       DATABASE_DB: postgres
       DATABASE_USER: postgres
-      DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+      DATABASE_PASSWORD: postgres # ${{ secrets.DATABASE_PASSWORD }}
       DATABASE_HOST: localhost
       DATABASE_PORT: 5432
       DATABASE: postgres
