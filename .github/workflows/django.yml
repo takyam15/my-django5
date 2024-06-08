@@ -56,7 +56,8 @@ jobs:
           pip install -r requirements.txt
       - name: Migrate database
         run: |
-          python manage.py makemigrations
+          python manage.py makemigrations account
+          python manage.py migrate account
           python manage.py migrate
       - name: Test with pytest
         run: |
