@@ -54,7 +54,7 @@ class TestUserLogoutView:
         request = rf.post(reverse('account:logout'))
         request.user = user
         response = UserLogoutView.as_view()(request)
-        assert '_auth_user_id' not in request.session
+        assert not request.user.is_authenticated
         assert response.status_code == 302
         assert response.url == reverse('account:login')
 
