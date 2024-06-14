@@ -53,6 +53,9 @@ class TestUserLogoutView:
         rf = RequestFactory()
         request = rf.post(reverse('account:logout'))
         request.user = user
+        middleware = SessionMiddleware(lambda request: None)
+        middleware.process_request(request)
+        request.session.save()
         response = UserLogoutView.as_view()(request)
         assert not request.user.is_authenticated
         assert response.status_code == 302
