@@ -1,5 +1,6 @@
+from django.contrib.auth import logout
 from django.contrib.auth.models import AnonymousUser
-from django.contrib.sessions.middleware import SessionMiddleware
+#from django.contrib.sessions.middleware import SessionMiddleware
 from django.test import RequestFactory
 from django.urls import reverse
 
@@ -53,10 +54,7 @@ class TestUserLogoutView:
         rf = RequestFactory()
         request = rf.post(reverse('account:logout'))
         request.user = user
-        middleware = SessionMiddleware(lambda request: None)
-        middleware.process_request(request)
-        request.session.save()
-        response = UserLogoutView.as_view()(request)
+        response = logout(request)
         assert not request.user.is_authenticated
         assert response.status_code == 302
         assert response.url == reverse('account:login')
